@@ -4,9 +4,21 @@
 
 Батчингом в React називають процес группування декількох кикликів оновлення стану в один етап рендерінгу.
 
-Наприклад такий код:
-
 Приклад_1:
+
+```javascript
+const [country, setCountry] = useState("");
+const [language, setLanguage] = useState("");
+
+const onClick = (newCountry, newLanguage) => {
+  setCountry(newCountry);
+  SetLanguage(newLanguage);
+};
+```
+
+Кількість рендерів: 1
+
+Приклад_2:
 
 ```javascript
 const onClick = async (formData) => {
@@ -20,7 +32,13 @@ const onClick = async (formData) => {
 
 Кількість рендерів: 2
 
-Приклад_2:
+Причина зміни кількості рендерів в асинхронних методах:
+setTimeout
+setInterval
+Promise
+XMLHttpreaquest
+
+Приклад_3:
 
 ```javascript
 const onClick = async (formData) => {
