@@ -12,7 +12,7 @@ const [language, setLanguage] = useState("");
 
 const onClick = (newCountry, newLanguage) => {
   setCountry(newCountry);
-  SetLanguage(newLanguage);
+  setLanguage(newLanguage);
 };
 ```
 
@@ -42,11 +42,14 @@ XMLHttpreaquest
 
 ```javascript
 const onClick = async (formData) => {
+  //в 17 та 18 версії ці два виклики груперуються в 1 рендер
   setLoading(true);
   setSubmitButtonDisabled(true);
 
   const deal = await createDeal(formData);
 
+  //в 17 версії ці 3 виклики роблять 3 рендер
+  //в 18 версії ці 3 виклики груперуються  в 1 рендер
   setDeal(deal);
   setSubmitButtonDisabled(false);
   setLoading(false);
@@ -55,5 +58,26 @@ const onClick = async (formData) => {
 
 Кількість рендерів:
 
-    V.17 - 5 рендерів
+    V.17 - 4 рендерів
     V.18 - 2 рендера
+
+---
+
+В версіях до 18 (з якої????) можна вирішити за допомогою unstable_batchedUpdates()
+
+```javascript
+import { unstable_batchedUpdates } from "react-dom";
+
+const onClick = async (formData) => {
+  setLoading(true);
+  setSubmitButtonDisabled(true);
+
+  const deal = await createDeal(formData);
+
+  unstable_batchedUpdates(() => {
+    setDeal(deal);
+    setSubmitButtonDisabled(false);
+    setLoading(false);
+  });
+};
+```
