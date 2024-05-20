@@ -1,6 +1,6 @@
 ## React 18 vs 17 Основні відмінності
 
-1. Automatic batching - автоматичний батчинг оновлення стану для асинхронних операцій.
+### 1. Automatic batching - автоматичний батчинг оновлення стану для асинхронних операцій.
 
 Батчингом в React називають процес группування декількох кикликів оновлення стану в один етап рендерінгу.
 
@@ -33,10 +33,10 @@ const onClick = async (formData) => {
 Кількість рендерів: 2
 
 Причина зміни кількості рендерів в асинхронних методах:
-setTimeout
-setInterval
-Promise
-XMLHttpreaquest
+setTimeout \
+setInterval \
+Promise \
+XMLHttpreaquest \
 
 Приклад_3:
 
@@ -63,7 +63,7 @@ const onClick = async (formData) => {
 
 ---
 
-В версіях до 18 (з якої????) можна вирішити за допомогою unstable_batchedUpdates()
+В версіях до 18 можна вирішити за допомогою unstable_batchedUpdates()
 
 ```javascript
 import { unstable_batchedUpdates } from "react-dom";
