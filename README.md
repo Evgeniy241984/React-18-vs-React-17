@@ -106,8 +106,46 @@ const onClick = async (formData) => {
 Паттерни DataFetching в реакті
 
 1. Fetch on Render - https://codesandbox.io/p/sandbox/fetch-on-render-x6y5pp?file=%2Fsrc%2FCountries.js%3A13%2C26 \
-   ![Fetch on Render](/images/Fetch_On_Render.png) \
+   ![Fetch on Render](/images/Fetch_On_Render.png)
+
+- завантаження стану в useEffect
+- підтримувати стан завантаження вручну (додержуватись в компоненті порядку зміни стану)
+
 2. Fetch then Render - https://codesandbox.io/p/sandbox/fetch-then-render-ngjfzf?file=%2Fsrc%2FCountries.js%3A11%2C20 \
-   ![Fetch then Render](/images/Fetch_Then_Render.png) \
+   ![Fetch then Render](/images/Fetch_Then_Render.png)
+
+- підтримувати стан завантаження вручну (додержуватись в компоненті порядку зміни стану)
+
 3. Render while Fetch - https://codesandbox.io/p/sandbox/render-while-fetch-rw8kv2?file=%2Fsrc%2FCountries.js%3A8%2C11 \
-   ![Render while Fetch](/images/Render_While_Fetch.png) \
+   ![Render while Fetch](/images/Render_While_Fetch.png)
+
+### 4. Нові Client and Server Rendering APIs
+
+#### 4.1. Client
+
+    createRoot - використовується у 18 версії замість ReactDOM.render.
+
+    в 17 версії
+
+    ```javascript
+    const root = document.getElementById('root');
+
+    ReactDOM.render(
+        <StrictMode>
+            <App />
+        </StrictMode>,
+        root
+    )
+    ```
+    в 18 версії
+
+    ```javascript
+    const rootElement = document.getElementById("root");
+    const root = createRoot(rootElement);
+
+    root.render(
+        <StrictMode>
+            <App />
+        </StrictMode>
+    );
+    ```
