@@ -127,25 +127,26 @@ const onClick = async (formData) => {
 
     в 17 версії
 
-    ```javascript
-    const root = document.getElementById('root');
+```javascript
+const root = document.getElementById("root");
 
-    ReactDOM.render(
-        <StrictMode>
-            <App />
-        </StrictMode>,
-        root
-    )
-    ```
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  root
+);
+```
+
     в 18 версії
 
-    ```javascript
-    const rootElement = document.getElementById("root");
-    const root = createRoot(rootElement);
+```javascript
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
 
-    root.render(
-        <StrictMode>
-            <App />
-        </StrictMode>
-    );
-    ```
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+```
