@@ -119,7 +119,25 @@ const onClick = async (formData) => {
 3. Render while Fetch - https://codesandbox.io/p/sandbox/render-while-fetch-rw8kv2?file=%2Fsrc%2FCountries.js%3A8%2C11 \
    ![Render while Fetch](/images/Render_While_Fetch.png)
 
-### 4. Нові Client and Server Rendering APIs
+### 4. Нові хуки
+
+    4.1. useId() - генерує унікальний id (дуже корисно наприклад у формах з багатьма inputs, checkbox та ін)
+
+```javascript
+const Checkbox = (title) => {
+  const id = useId();
+  return (
+    <label>
+      <input id={id} type="checkbox" />
+      {title}
+    </label>
+  );
+};
+```
+
+    4.2. useDeferredValue() -
+
+### 5. Нові Client and Server Rendering APIs
 
 #### 4.1. Client
 
@@ -150,3 +168,5 @@ root.render(
   </StrictMode>
 );
 ```
+
+це потрібно шоб використовувати нові можливості 18 версії (Transitions, Suspence та ін)
