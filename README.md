@@ -105,7 +105,9 @@ const onClick = async (formData) => {
 
 Паттерни DataFetching в реакті
 
-1. Fetch on Render - приклад https://codesandbox.io/p/sandbox/fetch-on-render-x6y5pp?file=%2Fsrc%2FCountries.js%3A13%2C26 \
+1. Fetch on Render - https://codesandbox.io/p/sandbox/fetch-on-render-x6y5pp?file=%2Fsrc%2FCountries.js%3A13%2C26 \
    ![Fetch on Render](/images/Fetch_On_Render.png) \
-2. Fetch then Render - \
-3. Render while Fetch
+2. Fetch then Render - https://codesandbox.io/p/sandbox/fetch-then-render-ngjfzf?file=%2Fsrc%2FCountries.js%3A11%2C20 \
+   ![Fetch then Render](/images/Fetch_Then_Render.png) \
+3. Render while Fetch - https://codesandbox.io/p/sandbox/render-while-fetch-rw8kv2?file=%2Fsrc%2FCountries.js%3A8%2C11 \
+   ![Render while Fetch](/images/Render_While_Fetch.png) \
